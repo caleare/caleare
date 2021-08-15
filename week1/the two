@@ -1,0 +1,49 @@
+
+#include<stdio.h>
+#include<string>
+#include<algorithm>
+using namespace std;
+#define MAXN 100
+ 
+char dictionary[MAXN][MAXN];
+char table[MAXN][MAXN];//字谜
+ 
+//由上顺时针旋转一圈
+int dx[8] = { 0,1,1,1,0,-1,-1,-1 };
+int dy[8] = { 1,1,0,-1,-1,-1,0,1 };
+ 
+int dic_num, n;
+ 
+int main() {
+	int i;
+	scanf("%d%d", &dic_num, &n);
+ 
+	for (i = 0; i < dic_num; i++) {
+		scanf("%s", dictionary[i]);
+	}
+ 
+	for (i = 0; i < n; i++) {
+		scanf("%s", table[i]);
+	}
+ 
+	for (int r = 0; r < n; r++) {
+		for (int c = 0; c < n; c++) {
+			for (int d = 0; d < 8; d++) {
+				string s;
+				int rr = r;
+				int cc = c;
+				for (int l = 1; l <= n; l++) {
+					s += table[rr][cc];
+					rr += dx[d];
+					cc += dy[d];
+					for (int i = 0; i < dic_num; i++) {
+						if (strcmp(s.c_str(), dictionary[i]) == 0) {
+							printf("%s\n", s.c_str());
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+}
