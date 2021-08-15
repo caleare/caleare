@@ -1,0 +1,42 @@
+#include <stdio.h>
+ 
+#define PrintDigit( Ch )      ( putchar( ( Ch ) + '0' ) )
+ 
+ 
+void PrintInt(unsigned int N)  /* Print nonnegative N */
+{
+	if (N >= 10)
+		PrintInt(N / 10);
+	PrintDigit(N % 10);
+}
+ 
+void PrintOut(double N,int accuracy) 
+{
+	if (N < 0){
+		putchar('-');
+		N = -N;
+	}
+	int n = (int)N;
+	PrintInt(n);
+	double decimal = N - n;
+	if (decimal > 0){
+		putchar('.');
+		double add = 0.5;
+		for (int i = 0; i < accuracy; i++) {
+			add /= 10;
+		}
+		N += add;
+		for (int i = 0; i < accuracy; i++){
+			decimal *= 10;			
+		}
+		PrintInt(decimal);
+	}
+}
+ 
+ 
+int main()
+{
+	PrintOut(1208.123456,3);
+	putchar('\n');
+	return 0;
+}
