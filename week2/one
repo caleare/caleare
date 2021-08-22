@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+  int a,b;
+  printf("请输入两个数:");
+  scanf("%d %d",&a,&b);
+  if(a>b)  
+  printf("数从小到大排列是:%d %d\n",b,a);  
+  else
+  printf("数从小到大排列是:%d %d\n",a,b);  
+  return 0;
+}
