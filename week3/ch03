@@ -1,0 +1,12 @@
+void
+Delete(ElementType X,List L)
+{
+  Position P,TmpCell;
+  P=FindPrevious(X,L);
+  if(!Islast(P,L))
+  {
+      TmpCe;;=CursorSpace[P].Next;
+      CursorSpace[p].Next=CursorSpace[TmpCell].Next;
+      CursorFree(TmpCell);   
+   }
+}
