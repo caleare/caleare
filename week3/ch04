@@ -1,0 +1,9 @@
+Position
+Find(ElementType X,List L)
+{
+   Position P;
+   P=CursorSpace[L].Next;
+   while(P&&CursorSpace[p].Element!=X)
+       P=CursorSpace[P].Next;
+   return P;
+}
