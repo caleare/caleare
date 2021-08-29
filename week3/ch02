@@ -1,0 +1,11 @@
+void
+Insert(ElementType X,List L, Position P)
+{
+  Position TmpCell;
+  TmpCell=CursorAlloc();
+  if(TmpCell==0)
+     FatalError("Out of space!!!");
+  CursorSpace[TmpCell].Element=X;
+  CursorSpace[TmpCell].Next=CursorSpace[P].Next;
+  CursorSpace[P].Next=TmpCell;
+}
