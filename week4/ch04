@@ -1,0 +1,16 @@
+Stack
+CreateStack(int MaxElements)
+{ 
+  Stack S;
+  if(MaxElements<MinStackSize)
+     Error("Stack size is too small");
+  S=malloc(sizeof(struct StackRecord));
+  if(S==NULL)
+      FatalError("Out of space!!!");
+  S->Array=malloc(sizeof(ElementType))
+  if(S->Array==NULL)
+     FatalError("Out of space!!!");
+  S->Capacity=MaxElements;
+  MakeEmpty(S);
+  return S;
+}
